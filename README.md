@@ -4,16 +4,18 @@ ChromaView Master is a Streamlit-based tool designed to help you understand, vis
 
 ## Features
 
-* **Collection Overview:** View a list of collections in your Chroma database.
-* **Topic Modeling:** Identify main topics within your document collections.
-* **Dimensionality Reduction:** Visualize relationships between documents.
-* **Similarity Search:** Find documents similar to a query.
-* **Knowledge Graph Visualization:** Explore entities and relationships.
-* **Tag Cloud:** See word prominence in your collections.
-* **Sunburst Chart:** Visualize hierarchical data.
-* **Document Length Analysis:** Analyze document size distribution.
-* **Entity Co-occurrence Matrix:** Explore entity co-occurrence frequency.
-* **Sentiment Analysis:** Determine document sentiment (positive, negative, neutral).
+
+* **Collection Overview:** Get a quick overview of all the collections stored within your Chroma database, along with basic statistics like the number of documents in each collection.
+* **Topic Modeling:** Employ Latent Dirichlet Allocation (LDA) to uncover the main themes and topics discussed within your document collections. Understand the distribution of topics across documents and identify the most representative words for each topic.
+* **Dimensionality Reduction:** Utilize t-SNE to reduce the dimensionality of your document embeddings, allowing you to visualize document relationships in a 2D scatter plot. Documents closer together are semantically more similar.
+* **Similarity Search:** Enter a query and find the most similar documents within your collection based on semantic similarity. This can be helpful for retrieving relevant information or identifying duplicates.
+* **Knowledge Graph Visualization:** Extract entities (people, places, organizations, etc.) and their relationships from your documents and visualize them as an interactive network graph. Gain insights into the connections between different concepts in your data.
+* **Tag Cloud:** Visualize the most frequent words in your collection as a word cloud, where the size of each word corresponds to its frequency. Quickly grasp the dominant themes and vocabulary used in your documents.
+* **Sunburst Chart:** If your data has a hierarchical structure (e.g., categories and subcategories), visualize it using a sunburst chart. This interactive chart allows you to drill down into different levels of the hierarchy.
+* **Document Length Analysis:** Analyze the distribution of document lengths within your collection. Identify outliers and understand the general characteristics of your text data.
+* **Entity Co-occurrence Matrix:** Explore how often different entities co-occur within the same documents. This can reveal patterns and associations between entities.
+* **Sentiment Analysis:** Perform sentiment analysis on your documents to determine whether the overall tone is positive, negative, or neutral. Understand the emotional content of your text data.
+
 
 ## Installation and Usage
 
