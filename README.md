@@ -1,6 +1,7 @@
 # ChromaView Master 1.0
 
 ChromaView Master is a Streamlit-based tool designed to help you understand, visualize, and manipulate Chroma database collections. I created this tool for situations where I frequently create ad-hoc RAG (Retrieval Augmented Generation) Chroma databases, and I needed an easier way to inspect their structure and content without relying solely on an LLM.
+![screen_view](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/9d8dafcd-55da-4505-a01b-91aa972c0f29)
 
 ## Features
 
@@ -16,6 +17,7 @@ ChromaView Master is a Streamlit-based tool designed to help you understand, vis
 * **Entity Co-occurrence Matrix:** Explore how often different entities co-occur within the same documents. This can reveal patterns and associations between entities.
 * **Sentiment Analysis:** Perform sentiment analysis on your documents to determine whether the overall tone is positive, negative, or neutral. Understand the emotional content of your text data.
 
+![tag_cloud_sample](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/44a3a7e1-87ab-46fb-9485-f68eaa35c3af)
 
 ## Installation and Usage
 
