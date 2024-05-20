@@ -61,3 +61,10 @@ If your Chroma database is located at `/Users/yourname/documents/mychromadb`, yo
 
 ```bash
 streamlit run chromaMaster.py /Users/yourname/documents/mychromadb
+
+
+## Troubleshooting
+
+- Large datastores may take awhile to generate. This is a limitation of browser & streamlit.
+
+You can find me on discord Preston McCauley
