@@ -1,0 +1,11 @@
+chromadb
+streamlit
+pandas
+sklearn
+spacy
+networkx
+plotly
+wordcloud
+textblob
+plotly.express
+plotly.graph_objects
