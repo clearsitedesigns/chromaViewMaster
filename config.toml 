@@ -1,0 +1,9 @@
+# Set the path to your background image relative to your project directory
+[server]
+baseUrlPath = "/static"
+
+
+# Increase the maximum message size for WebSocket communication
+maxMessageSize = 600  # Set to 500 MB (or adjust as needed)
+
+
