@@ -1,6 +1,6 @@
 # ChromaView Master 1.0
 
-ChromaView Master is a Streamlit-based tool designed to help you understand, visualize, and manipulate Chroma database collections. I created this tool for situations where I frequently create ad-hoc RAG (Retrieval Augmented Generation) Chroma databases, and I needed an easier way to inspect their structure and content without relying solely on an LLM.
+ChromaView Master is a Streamlit-based tool designed to help you understand, visualize, and manipulate Chroma database collections. I created this tool for situations where I frequently create ad-hoc RAG (Retrieval Augmented Generation) Chroma databases, and I needed an easier way to inspect their structure and content without relying solely on an LLM. I just needed a simple tool to quickly analyze chroma databases. 
 
 
 ![screen_view](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/9d8dafcd-55da-4505-a01b-91aa972c0f29)
