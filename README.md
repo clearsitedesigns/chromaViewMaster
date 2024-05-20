@@ -5,6 +5,10 @@ ChromaView Master is a Streamlit-based tool designed to help you understand, vis
 
 ![screen_view](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/9d8dafcd-55da-4505-a01b-91aa972c0f29)
 
+
+
+
+
 ## Features
 
 
@@ -20,6 +24,13 @@ ChromaView Master is a Streamlit-based tool designed to help you understand, vis
 * **Sentiment Analysis:** Perform sentiment analysis on your documents to determine whether the overall tone is positive, negative, or neutral. Understand the emotional content of your text data.
 
 ![tag_cloud_sample](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/44a3a7e1-87ab-46fb-9485-f68eaa35c3af)
+
+## Prerequisites
+
+- Python 3.7 or above
+- Operating System: Windows, macOS, or Linux
+- Conda (recommended for creating a clean environment)
+
 
 ## Installation and Usage
 
