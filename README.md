@@ -8,6 +8,7 @@ This is actively being revised still....
 ![screen_view](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/9d8dafcd-55da-4505-a01b-91aa972c0f29)
 
 
+<img width="1583" alt="Screenshot 2024-05-20 at 8 38 01 AM" src="https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/ccb5672c-4f9d-4c62-9014-2c5b07888bd3">
 
 
 
