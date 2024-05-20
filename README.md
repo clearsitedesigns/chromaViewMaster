@@ -1,18 +1,23 @@
-ChromaView Master 1.0
+# ChromaView Master 1.0
 
-Introduction
+ChromaView Master is a Streamlit-based tool designed to help you understand, visualize, and manipulate Chroma database collections. I created this tool for situations where I frequently create ad-hoc RAG (Retrieval Augmented Generation) Chroma databases, and I needed an easier way to inspect their structure and content without relying solely on an LLM.
 
-ChromaView Master is a Streamlit-based tool I designed to provide insights into Chroma databases, which are often used in RAG (Retrieval Augmented Generation) systems. This tool helps users understand the core structure of their Chroma collections by offering a variety of analysis and visualization options.
+## Features
 
-Features
+* **Collection Overview:** View a list of collections in your Chroma database.
+* **Topic Modeling:** Identify main topics within your document collections.
+* **Dimensionality Reduction:** Visualize relationships between documents.
+* **Similarity Search:** Find documents similar to a query.
+* **Knowledge Graph Visualization:** Explore entities and relationships.
+* **Tag Cloud:** See word prominence in your collections.
+* **Sunburst Chart:** Visualize hierarchical data.
+* **Document Length Analysis:** Analyze document size distribution.
+* **Entity Co-occurrence Matrix:** Explore entity co-occurrence frequency.
+* **Sentiment Analysis:** Determine document sentiment (positive, negative, neutral).
 
-Collection Overview: View a list of all collections within your specified Chroma database.
-Topic Modeling: Identify the main topics or themes within your document collections.
-Dimensionality Reduction: Visualize the relationships between documents in a reduced dimensional space.
-Similarity Search: Find documents most similar to a given query.
-Knowledge Graph Visualization: Explore entities and relationships extracted from your documents.
-Tag Cloud: Visually assess the prominence of words within your collections.
-Sunburst Chart: Display hierarchical data in an intuitive radial layout.
-Document Length Analysis: Analyze the distribution of document lengths.
-Entity Co-occurrence Matrix: Explore how often entities appear together in your documents.
-Sentiment Analysis: Determine the overall sentiment of documents (positive, negative, or neutral).
+## Installation
+
+1. **Prerequisites:** Ensure you have Python and `pip` installed. (I recommend using a clean conda environment.)
+2. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
