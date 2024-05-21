@@ -41,7 +41,7 @@ This is actively being revised still....
    * Ensure you have Python and `pip` installed. (I recommend using a clean conda environment.)
    * Install required libraries:
       ```bash
-      pip install chromadb streamlit pandas sklearn spacy networkx plotly wordcloud textblob plotly.express plotly.graph_objects
+     pip install -r requirements.txt
       ```
    * Download the spaCy model:
       ```bash
