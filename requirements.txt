@@ -1,11 +1,11 @@
 chromadb
-streamlit
 pandas
-sklearn
-spacy
+streamlit
+argparse
+scikit-learn
 networkx
-plotly
+spacy
 wordcloud
+plotly
 textblob
-plotly.express
-plotly.graph_objects
+pyvis
