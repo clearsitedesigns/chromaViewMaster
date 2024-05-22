@@ -52,7 +52,7 @@ This is actively being revised still....
    * Locate the path to your Chroma database.
    * Execute the following command in your terminal:
       ```bash
-      streamlit run chromaMaster.py /path_to_your_database/testdb 
+      streamlit run chromaViewMaster.py /path_to_your_database/testdb 
       ```
       (Replace `/path_to_your_database/testdb` with your actual path)
 
