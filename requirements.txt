@@ -1,11 +1,12 @@
-chromadb
-pandas
 streamlit
-argparse
+pandas
 scikit-learn
-networkx
 spacy
-wordcloud
 plotly
+matplotlib
 textblob
+wordcloud
 pyvis
+chromadb
+networkx
+argparse
