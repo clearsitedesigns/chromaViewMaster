@@ -14,17 +14,16 @@ This is actively being revised still....
 
 ## Features
 
-
 * **Collection Overview:** Get a quick overview of all the collections stored within your Chroma database, along with basic statistics like the number of documents in each collection.
-* **Topic Modeling:** Employ Latent Dirichlet Allocation (LDA) to uncover the main themes and topics discussed within your document collections. Understand the distribution of topics across documents and identify the most representative words for each topic.
-* **Dimensionality Reduction:** Utilize t-SNE to reduce the dimensionality of your document embeddings, allowing you to visualize document relationships in a 2D scatter plot. Documents closer together are semantically more similar.
+* **Topic Modeling:** Employ Latent Dirichlet Allocation (LDA) to uncover the main themes and topics discussed within your document collections. Understand the distribution of topics across documents and identify the most representative words for each topic. Includes an interactive pie chart to visualize topic distribution.
 * **Similarity Search:** Enter a query and find the most similar documents within your collection based on semantic similarity. This can be helpful for retrieving relevant information or identifying duplicates.
-* **Knowledge Graph Visualization:** Extract entities (people, places, organizations, etc.) and their relationships from your documents and visualize them as an interactive network graph. Gain insights into the connections between different concepts in your data.
+* **Knowledge Graph Visualization:** Extract entities (people, places, organizations, etc.) and their relationships from your documents and visualize them as an interactive network graph using Plotly and NetworkX. Gain insights into the connections between different concepts in your data.
 * **Tag Cloud:** Visualize the most frequent words in your collection as a word cloud, where the size of each word corresponds to its frequency. Quickly grasp the dominant themes and vocabulary used in your documents.
-* **Sunburst Chart:** If your data has a hierarchical structure (e.g., categories and subcategories), visualize it using a sunburst chart. This interactive chart allows you to drill down into different levels of the hierarchy.
-* **Document Length Analysis:** Analyze the distribution of document lengths within your collection. Identify outliers and understand the general characteristics of your text data.
-* **Entity Co-occurrence Matrix:** Explore how often different entities co-occur within the same documents. This can reveal patterns and associations between entities.
-* **Sentiment Analysis:** Perform sentiment analysis on your documents to determine whether the overall tone is positive, negative, or neutral. Understand the emotional content of your text data.
+* **Treemap Chart:** Visualize hierarchical data with nested rectangles using a treemap chart. Each rectangle represents a category, and its size is proportional to its value. This replaces the previous sunburst chart for a more intuitive hierarchical representation.
+* **Document Length Analysis:** Analyze the distribution of document lengths within your collection. Identify outliers and understand the general characteristics of your text data. Includes detailed statistics such as mean, median, mode, min, max, standard deviation, and percentiles.
+* **Entity Co-occurrence Matrix:** Explore how often different entities co-occur within the same documents. This can reveal patterns and associations between entities. Visualize the matrix using heatmaps and network graphs to identify strong co-occurrences and relationships dynamically.
+* **Sentiment Analysis:** Perform sentiment analysis on your documents to determine whether the overall tone is positive, negative, or neutral. Understand the emotional content of your text data with enhanced visualizations such as histograms, density plots, pie charts, and word clouds for different sentiment categories.
+* **Knowledge Graph (PyVis):** Dynamically explore relationships between entities by entering a topic or entity of interest. The graph will display nodes and edges related to the entered topic, helping to uncover hidden connections within your data.
 
 ![tag_cloud_sample](https://github.com/clearsitedesigns/chromaViewMaster/assets/5733537/44a3a7e1-87ab-46fb-9485-f68eaa35c3af)
 
