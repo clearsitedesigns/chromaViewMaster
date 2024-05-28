@@ -7,3 +7,5 @@ baseUrlPath = "/static"
 maxMessageSize = 600  # Set to 500 MB (or adjust as needed)
 
 
+[server]
+fileWatcherType = "poll"

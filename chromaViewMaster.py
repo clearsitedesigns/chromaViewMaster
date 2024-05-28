@@ -92,23 +92,49 @@ def preprocess_for_knowledge_graph(df):
     entity_freq = Counter(entities)
     return entities, relationships, entity_freq
 
-def render_collection_statistics(df):
+def display_unique_document_count(df):
+    if 'metadatas' in df.columns:
+        # Extract URLs from metadata
+        urls = [meta.get('url') for meta in df['metadatas'] if meta.get('url') is not None]
+        unique_urls = pd.Series(urls).unique()
+        num_documents = len(unique_urls)
+        st.write(f"Number of Documents (unique URLs): {num_documents}")
+        
+        # Display the unique URLs for debugging purposes
+        st.write("Unique URLs:")
+        st.write(unique_urls)
+        
+        # Display the first few documents associated with unique URLs for verification
+        st.write("Sample documents associated with unique URLs:")
+        sample_docs = df[df['metadatas'].apply(lambda x: x.get('url') in unique_urls)].head(10)
+        st.write(sample_docs)
+    else:
+        st.write("The collection does not contain a 'metadatas' column.")
+
+def render_collection_statistics(collection):
     st.subheader("Collection Statistics")
     st.write("View statistics on the current collection.")
-    
-    num_documents = len(df)
+
+    # Get the collection data
+    data = collection.get()
+    df = pd.DataFrame.from_dict(data)
+
+    # Get the unique document count based on the 'url' field in metadata
+    display_unique_document_count(df)
+
+    # Calculate other statistics
     doc_lengths = df['documents'].apply(len)
     avg_doc_length = doc_lengths.mean()
     median_doc_length = doc_lengths.median()
     std_doc_length = doc_lengths.std()
-    
+
     most_common_words = Counter(" ".join(df['documents']).split()).most_common(10)
     most_common_words_str = ", ".join([word for word, count in most_common_words])
-    
+
     entities = [ent.text for doc in nlp.pipe(df['documents'].astype(str)) for ent in doc.ents]
     most_common_entities = Counter(entities).most_common(10)
     most_common_entities_str = ", ".join([entity for entity, count in most_common_entities])
-    
+
     df['sentiment'] = df['documents'].apply(lambda x: TextBlob(x).sentiment.polarity)
     sentiment_counts = df['sentiment'].value_counts(bins=3, sort=False)
     sentiment_distribution = {
@@ -117,8 +143,9 @@ def render_collection_statistics(df):
         'Positive': sentiment_counts.iloc[2]
     }
 
+    # Create a dictionary with the statistics
     statistics = {
-        "Number of Documents": num_documents,
+        "Number of Documents": len(df['documents']),
         "Average Document Length": avg_doc_length,
         "Median Document Length": median_doc_length,
         "Standard Deviation of Document Length": std_doc_length,
@@ -128,10 +155,11 @@ def render_collection_statistics(df):
         "Neutral Sentiment Documents": sentiment_distribution['Neutral'],
         "Positive Sentiment Documents": sentiment_distribution['Positive']
     }
-    
+
     # Convert all values to strings to avoid conversion errors
     statistics_str = {k: str(v) for k, v in statistics.items()}
-    
+
+    # Display the statistics as a table
     st.table(pd.DataFrame(statistics_str.items(), columns=['Statistic', 'Value']))
 
 # Visualization Functions
@@ -664,7 +692,6 @@ def render_sentiment_analysis(df):
     # Sentiment vs. Document Length
     fig_sent_len = px.scatter(df, x='document_length', y='sentiment', title="Sentiment vs. Document Length")
     st.plotly_chart(fig_sent_len)
-   
 
 def render_network_centrality(G, collection_name):
     centrality = nx.degree_centrality(G)
@@ -675,18 +702,31 @@ def render_network_centrality(G, collection_name):
 def view_collections(dir):
     st.header("ChromaView Master 1.1")
     st.markdown("DB Path: %s" % dir)
-    st.write("Below are the collections found in the specified Chroma DB path. You can explore the collections by performing various actions like topic modeling, similarity search, and knowledge graph visualization. Select a chroma collection below. All tools were massively upgrade. Some may take longer to load.")
+    st.write("Below are the collections found in the specified Chroma DB path. You can explore the collections by performing various actions like topic modeling, similarity search, and knowledge graph visualization. Select a chroma collection below. All tools were massively upgraded. Some may take longer to load.")
+
+    version = "1.1"  # Replace with your actual versioning logic
+
+    st.markdown(f"""
+    **ChromaView Master {version} empowers data scientists and analysts to gain a comprehensive understanding of their Chroma DB collections.**
+
+    Leveraging techniques like Latent Dirichlet Allocation (LDA) for topic modeling and spaCy for entity extraction, the tool provides:
+
+    * **Advanced Analysis:** Go beyond basic statistics with in-depth visualizations.
+    * **Customizable Exploration:** Choose the analysis methods that best suit your needs.
+    * **Interactive Interface:** Streamlit-based for easy navigation and exploration.
+    * **Open Source:** Built with flexibility and extensibility in mind. 
+    """)
+
     client = chromadb.PersistentClient(path=dir)
-    
     collections = client.list_collections()
     collection_names = [collection.name for collection in collections]
     selected_collection_name = st.selectbox("**Begin By Selecting a Collection**", collection_names)
-    
 
     if selected_collection_name:
         for collection in collections:
             if collection.name == selected_collection_name:
-                data = collection.get()
+                current_collection = collection  # Store the actual collection object
+                data = current_collection.get()
                 ids = data['ids']
                 embeddings = data["embeddings"]
                 metadata = data["metadatas"]
@@ -714,7 +754,7 @@ def view_collections(dir):
                     st.write("Your output from the left selection will appear here.")
                 
                     if view_collection_statistics:
-                        render_collection_statistics(df)
+                        render_collection_statistics(collection)
 
                     if perform_topic_modeling:
                         render_topic_modeling(df, collection.name)
